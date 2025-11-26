@@ -28,7 +28,7 @@ Projeto desenvolvido para demonstrar competências em desenvolvimento Full Stack
 ### Passo 1: Clone o repositório
 
 ```bash
-git clone [https://github.com/fap233/task-manager.git](https://github.com/fap233/task-manager.git)
+git clone git@github.com:fap233/task-manager.git
 cd task-manager
 ```
 

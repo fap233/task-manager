@@ -1,0 +1,30 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  tasks     Task[] // Relacionamento: Um usuário tem várias tarefas
+}
+
+model Task {
+  id          String   @id @default(uuid())
+  title       String
+  description String? // O '?' indica que é opcional
+  status      String   @default("pendente") // pendente, em_andamento, concluida
+  createdAt   DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+}

@@ -1,0 +1,18 @@
+# Dependências
+node_modules/
+
+# Variáveis de Ambiente
+.env
+
+# Build do React
+web/dist/
+server/dist/
+
+# Logs e arquivos de sistema
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Postgres Data (Docker)
+pgdata/
